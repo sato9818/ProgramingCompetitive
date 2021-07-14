@@ -57,6 +57,12 @@ d: Union Find
 ABC202
 d: combination long long の範囲
 
+ABC204
+d: 部分和のdp
+
+ABC208
+d: ワーシャルフロイド
+
 ARC112
 a: A-B=Cを満たす組み合わせ　表を作ろう
 b: 
