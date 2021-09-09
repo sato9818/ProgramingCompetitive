@@ -23,12 +23,10 @@ vector<int> sieve(int n){
 }
 
 vector<int> sieve(int n){
-  vector<int> prime;
   vector<int> is_prime(n+1,0);
   for(int i=2;i<n+1;i++){
     if(is_prime[i] == 0){
       is_prime[i] = i;
-      prime.push_back(i);
       for(int j=2*i;j<n+1;j+=i){
         if(is_prime[j] == 0){
           is_prime[j] = i;
@@ -41,7 +39,7 @@ vector<int> sieve(int n){
 
 // 素因数分解
 vector<int> factors(int n, const vector<int>& min_factor) {
-  // min_factor は sieve() で得られたものとする
+  // min_factor は sieve() で得られたis_primeとする
   vector<int> res;
   while (n > 1) {
     res.push_back(min_factor[n]);
