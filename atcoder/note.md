@@ -75,6 +75,14 @@ d: 絶対値を外して数式に落とし込む
 ABC214
 d: UNION FINDでコストの小さい辺から繋げていく。
 
+ABC215
+e: bitDP
+
+ABC216
+d:
+upper_bound ある値より大きい最小の要素の検索
+lower_bound ある値以上の最小の要素の検索
+
 ARC112
 a: A-B=Cを満たす組み合わせ　表を作ろう
 b: 
