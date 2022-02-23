@@ -111,3 +111,5 @@ d: 典型的DP　ナップサック問題dp[item][cost]
 e: 典型的DP　ナップサック問題dp[item][value] 
 f: LCS dp[i][j]: s_iまでとt_jまでの最長共通部分列 string vectorのswapは時間かかる？
 g: DAG(非巡回有向グラフ) メモ化dfs
+
+leetcode 300 最長増加部分列

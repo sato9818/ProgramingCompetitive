@@ -13,7 +13,12 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
-
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        
+    }
+};
 
 int main(){
     Solution s;
