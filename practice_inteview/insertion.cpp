@@ -16,11 +16,12 @@ vector<int> insertion(vector<int> arr){
         while(j >= 0){
             if(arr[j] > ele){
                 arr[j+1] = arr[j];
-                j--; 
+                j--;
             }else{
                 break;
             }
         }
+        arr[j+1] = ele;
     }
     return arr;
 }

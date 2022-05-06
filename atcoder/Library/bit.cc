@@ -37,20 +37,19 @@ public:
         if(x<=0){
             //xが0以下の場合は該当するものなし→0を返す
             return 0;
-        }else{
-            ll i=0;ll r=1;
-            //最大としてありうる区間の長さを取得する
-            //n以下の最小の二乗のべき(BITで管理する数列の区間で最大のもの)を求める
-            while(r<n) r=r<<1;
-            //区間の長さは調べるごとに半分になる
-            for(int len=r;len>0;len=len>>1) {
-                //その区間を採用する場合
-                if(i+len<n && a[i+len]<x){
-                    x-=a[i+len];
-                    i+=len;
-                }
-            }
-            return i;
         }
+        ll i=0;ll r=1;
+        //最大としてありうる区間の長さを取得する
+        //n以下の最小の二乗のべき(BITで管理する数列の区間で最大のもの)を求める
+        while(r<n) r=r<<1;
+        //区間の長さは調べるごとに半分になる
+        for(int len=r;len>0;len=len>>1) {
+            //その区間を採用する場合
+            if(i+len<n && a[i+len]<x){
+                x-=a[i+len];
+                i+=len;
+            }
+        }
+        return i;
     }
 };
