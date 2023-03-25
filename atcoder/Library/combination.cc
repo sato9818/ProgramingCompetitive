@@ -1,7 +1,8 @@
 const int MAX = 2000005;
 long long fac[MAX], finv[MAX], inv[MAX];
 
-void COMinit() {
+void COMinit()
+{
   fac[0] = fac[1] = 1;
   finv[0] = finv[1] = 1;
   inv[1] = 1;
@@ -12,7 +13,8 @@ void COMinit() {
   }
 }
 
-long long COM(int n, int k){
+long long COM(int n, int k)
+{
   if (n < k) return 0;
   if (n < 0 || k < 0) return 0;
   return fac[n] * (finv[k] * finv[n - k] % MOD) % MOD;
