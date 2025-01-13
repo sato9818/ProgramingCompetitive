@@ -10,18 +10,17 @@ const int INF = 1001001001;
 const ll LINF = 1001001001001001001LL;
 
 int main() {
-    int n;
-    cin >> n;
-    vector<string> str(n);
-    rep(i,n) cin >> str[i];
+    int n,h,x;
+    cin >> n >> h >> x;
+    vector<int> p(n);
+    rep(i,n) cin >> p[i];
 
-    set<string> st{"and", "not", "that", "the", "you"};
     rep(i,n) {
-        if(st.count(str[i])) {
-            cout << "Yes" << endl;
+        if(h+p[i]>=x) {
+            cout << i+1 << endl;
             return 0;
         }
     }
-    cout << "No" << endl;
+
     return 0;
 }

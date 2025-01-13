@@ -12,16 +12,26 @@ const ll LINF = 1001001001001001001LL;
 int main() {
     int n;
     cin >> n;
-    vector<string> str(n);
-    rep(i,n) cin >> str[i];
-
-    set<string> st{"and", "not", "that", "the", "you"};
+    set<int> st;
     rep(i,n) {
-        if(st.count(str[i])) {
-            cout << "Yes" << endl;
-            return 0;
+        int a;
+        cin >> a;
+        st.insert(a);
+    }
+
+    int num = -1;
+
+    for(auto x : st) {
+        if(num == -1) {
+            num = x;
+        }else{
+            if(num + 1 != x){
+                cout << num + 1 << endl;
+                return 0;
+            }
+            num = x;
         }
     }
-    cout << "No" << endl;
+
     return 0;
 }

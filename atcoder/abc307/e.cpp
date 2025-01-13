@@ -10,18 +10,19 @@ const int INF = 1001001001;
 const ll LINF = 1001001001001001001LL;
 
 int main() {
-    int n;
-    cin >> n;
-    vector<string> str(n);
-    rep(i,n) cin >> str[i];
-
-    set<string> st{"and", "not", "that", "the", "you"};
-    rep(i,n) {
-        if(st.count(str[i])) {
-            cout << "Yes" << endl;
-            return 0;
-        }
+    int n, m;
+    cin >> n >> m;
+    ll sum = 1;
+    ll zero = 1;
+    rep(i,n-1) {
+        zero = ((sum - zero) + MOD) % MOD;
+        sum = sum * (m-1) % MOD;
     }
-    cout << "No" << endl;
+
+    // cout << sum << endl;
+    // cout << zero << endl;
+
+    cout << ((sum - zero + MOD) * m % MOD) << endl;
+
     return 0;
 }

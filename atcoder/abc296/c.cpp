@@ -10,18 +10,23 @@ const int INF = 1001001001;
 const ll LINF = 1001001001001001001LL;
 
 int main() {
-    int n;
-    cin >> n;
-    vector<string> str(n);
-    rep(i,n) cin >> str[i];
-
-    set<string> st{"and", "not", "that", "the", "you"};
+    int n, x;
+    cin >> n >> x;
+    vector<int> a(n);
     rep(i,n) {
-        if(st.count(str[i])) {
+        cin >> a[i];
+    }
+    map<int,int> mp;
+    rep(i,n) {
+        mp[a[i]]++;
+    }
+    rep(i,n) {
+        if(mp.count(a[i] - x) != 0) {
             cout << "Yes" << endl;
             return 0;
         }
     }
     cout << "No" << endl;
+
     return 0;
 }

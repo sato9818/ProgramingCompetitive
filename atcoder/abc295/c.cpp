@@ -10,6 +10,19 @@ const int INF = 1001001001;
 const ll LINF = 1001001001001001001LL;
 
 int main() {
+    int n;
+    cin >> n;
+    map<int, int> mp;
+    rep(i,n) {
+        int x;
+        cin >> x;
+        mp[x]++;
+    }
 
+    int ans = 0;
+    for(auto [k,v] : mp) {
+        ans+= v/2;
+    }
+    cout << ans << endl;
     return 0;
 }

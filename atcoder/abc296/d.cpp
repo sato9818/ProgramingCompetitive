@@ -10,18 +10,21 @@ const int INF = 1001001001;
 const ll LINF = 1001001001001001001LL;
 
 int main() {
-    int n;
-    cin >> n;
-    vector<string> str(n);
-    rep(i,n) cin >> str[i];
+    ll n,m;
+    cin >> n >> m;
+    ll ans = LINF;
 
-    set<string> st{"and", "not", "that", "the", "you"};
-    rep(i,n) {
-        if(st.count(str[i])) {
-            cout << "Yes" << endl;
-            return 0;
-        }
+    ll a = min((ll)1000000, n);
+    rep1(i,a+1){
+        ll b = ceil(1.0*m/i);
+        if(b > n) continue;
+        ans = min(ans, i * b);
     }
-    cout << "No" << endl;
+
+    if(ans == LINF) cout << -1 << endl;
+    else cout << ans << endl;
+
+
+
     return 0;
 }
