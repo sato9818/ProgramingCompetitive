@@ -1,3 +1,4 @@
 hiden_files/
+interview/**
 *.out
 *.DS_Store
